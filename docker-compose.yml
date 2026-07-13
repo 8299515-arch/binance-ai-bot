@@ -1,0 +1,9 @@
+services:
+  tracker:
+    build: .
+    env_file: .env
+    volumes:
+      - ./data:/app/data
+    environment:
+      - DB_PATH=/app/data/tracker.db
+    restart: unless-stopped
